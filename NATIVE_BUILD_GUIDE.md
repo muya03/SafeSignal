@@ -1,6 +1,6 @@
 # Guía de Construcción de SafeSignal para Android e iOS
 
-Esta guía explica cómo compilar SafeSignal como aplicación nativa para Android e iOS usando Capacitor con Firebase.
+Esta guía explica cómo compilar SafeSignal como aplicación nativa para Android e iOS usando Capacitor.
 
 ## Índice
 
@@ -8,10 +8,7 @@ Esta guía explica cómo compilar SafeSignal como aplicación nativa para Androi
 2. [Configuración Inicial](#configuración-inicial)
 3. [Construcción para Android](#construcción-para-android)
 4. [Construcción para iOS](#construcción-para-ios)
-5. [Configuración de Firebase](#configuración-de-firebase)
-6. [Notificaciones Push](#notificaciones-push)
-7. [Publicación en Tiendas](#publicación-en-tiendas)
-8. [Solución de Problemas](#solución-de-problemas)
+5. [Solución de Problemas](#solución-de-problemas)
 
 ---
 
@@ -59,21 +56,14 @@ Esta guía explica cómo compilar SafeSignal como aplicación nativa para Androi
 
 ## Configuración Inicial
 
-### 1. Descargar el proyecto
-
-Descarga el código desde Replit:
-1. En Replit, ve a los tres puntos (...) del menú
-2. Selecciona "Download as zip"
-3. Extrae en tu Mac
-
-### 2. Instalar dependencias
+### 1. Instalar dependencias
 
 ```bash
 cd safesignal
 npm install
 ```
 
-### 3. Construir la aplicación web
+### 2. Construir la aplicación web
 
 ```bash
 npm run build
@@ -81,7 +71,7 @@ npm run build
 
 Esto creará la carpeta `dist` con los archivos compilados.
 
-### 4. Añadir plataformas nativas
+### 3. Añadir plataformas nativas
 
 ```bash
 # Para iOS (en Mac)
@@ -91,7 +81,7 @@ npx cap add ios
 npx cap add android
 ```
 
-### 5. Sincronizar el código
+### 4. Sincronizar el código
 
 Después de cualquier cambio en el código web:
 
@@ -193,82 +183,6 @@ El APK estará en: `android/app/release/app-release.apk`
 
 ---
 
-## Configuración de Firebase
-
-### Ya está configurado
-
-SafeSignal ya tiene Firebase configurado. Los datos se guardan en Firebase Realtime Database automáticamente.
-
-### Para ver los datos en Firebase Console
-
-1. Ve a https://console.firebase.google.com/
-2. Abre el proyecto "safesignal-1f22c"
-3. Ve a **Realtime Database** para ver las salas y alertas
-
-### Configuración para Android (Notificaciones Push)
-
-1. En Firebase Console, ve a **Project Settings > General**
-2. En la sección "Your apps", busca Android
-3. Si no existe, haz clic en **Add app** > Android
-4. Ingresa el ID: `com.safesignal.app`
-5. Descarga `google-services.json`
-6. Copia el archivo a `android/app/`
-
-### Configuración para iOS (Notificaciones Push)
-
-1. En Firebase Console, ve a **Project Settings > General**
-2. Añade una app iOS con Bundle ID: `com.safesignal.app`
-3. Descarga `GoogleService-Info.plist`
-4. En Xcode, arrastra el archivo a la carpeta `App`
-5. En **Signing & Capabilities**, añade **Push Notifications**
-6. Añade **Background Modes** y activa **Remote notifications**
-
----
-
-## Notificaciones Push (Avanzado)
-
-### Requisitos adicionales
-
-Para que las notificaciones funcionen cuando la app está cerrada, necesitas:
-
-1. **Firebase Cloud Messaging** configurado (ver arriba)
-2. **Apple Push Notification Service (APNs)** para iOS:
-   - Crea una Key en Apple Developer Portal
-   - Súbela a Firebase Console > Project Settings > Cloud Messaging
-
-### Código ya incluido
-
-El archivo `client/src/lib/push-notifications.ts` ya maneja:
-- Solicitar permisos
-- Registrar el token del dispositivo
-- Recibir notificaciones
-
----
-
-## Publicación en Tiendas
-
-### Google Play Store
-
-1. Ve a https://play.google.com/console/
-2. Paga la tarifa única de $25 USD
-3. Crea una nueva aplicación
-4. Sube el archivo AAB (no APK) desde:
-   ```bash
-   cd android && ./gradlew bundleRelease
-   ```
-5. Completa toda la información requerida
-6. Envía para revisión (1-3 días)
-
-### Apple App Store
-
-1. Ve a https://appstoreconnect.apple.com/
-2. Crea una nueva app
-3. Sube el build desde Xcode (Archive > Distribute)
-4. Completa la información y capturas de pantalla
-5. Envía para revisión (1-7 días)
-
----
-
 ## Solución de Problemas
 
 ### "The web assets directory must contain an index.html"
@@ -291,14 +205,6 @@ sdk.dir=/Users/TU_USUARIO/Library/Android/sdk
 1. Xcode > Preferences > Accounts
 2. Añade tu Apple ID
 3. Haz clic en "Download Manual Profiles"
-
-### Firebase no conecta
-
-Verifica que las variables de entorno estén configuradas correctamente en `.env`:
-```
-VITE_FIREBASE_API_KEY=...
-VITE_FIREBASE_DATABASE_URL=...
-```
 
 ### La app no vibra en iOS
 
@@ -347,15 +253,6 @@ safesignal/
 ├── capacitor.config.ts    # Configuración de Capacitor
 └── NATIVE_BUILD_GUIDE.md  # Esta guía
 ```
-
----
-
-## Soporte
-
-Si tienes problemas:
-1. Revisa la consola de Xcode o Android Studio
-2. Verifica los logs de Firebase Console
-3. Consulta https://capacitorjs.com/docs
 
 ---
 
