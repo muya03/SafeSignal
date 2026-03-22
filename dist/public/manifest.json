@@ -1,0 +1,18 @@
+{
+  "name": "SafeSignal",
+  "short_name": "SafeSignal",
+  "description": "Comunicación de emergencia entre personas de apoyo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f3ff",
+  "theme_color": "#a855f7",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

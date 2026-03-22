@@ -1,0 +1,38 @@
+Actúa como un Desarrollador Web experto en React, Tailwind CSS y Firebase. Quiero construir una Progressive Web App (PWA) llamada "SafeSignal".
+
+### OBJETIVO
+Una aplicación web ultra-sencilla para comunicación de emergencia entre dos personas (una persona con depresión y su persona de apoyo). Debe funcionar rápido y sin fricción.
+
+### STACK TECNOLÓGICO
+- **Frontend:** React + Vite (Javascript).
+- **Estilos:** Tailwind CSS (para diseño rápido y responsivo).
+- **Base de Datos:** Firebase Realtime Database (para sincronización instantánea).
+- **Deploy:** Replit.
+
+### FUNCIONALIDADES CLAVE
+1. **Autenticación Invisible:**
+   - No quiero logins complejos. Usa un input simple para ingresar un "Nombre" y un "Código de Pareja" (ej: "AMIGOS123"). Si dos personas ponen el mismo código, se conectan. Guárdalo en localStorage para que no tengan que volver a escribirlo nunca.
+
+2. **Interfaz de Usuario (2 Estados):**
+   - **Estado "Normal":** Fondo de color calmante (Lavanda suave o Verde menta pastel). Texto: "Todo está tranquilo". Un botón discreto para "Pedir Ayuda".
+   - **Estado "Alerta":** Cuando alguien pulsa el botón, la pantalla de ambos usuarios debe cambiar INSTANTÁNEAMENTE a un color diferente (ej: Naranja suave, no rojo agresivo) y mostrar "Te necesito".
+
+3. **El Botón de Ayuda (Core Feature):**
+   - Debe ser grande y central.
+   - Debe requerir mantener pulsado 2 segundos (para evitar clicks por error) con una animación visual de carga.
+
+4. **Feedback:**
+   - Cuando el estado cambia a "Alerta", reproduce un sonido suave de notificación (usa un objeto Audio de JS) en el dispositivo del receptor.
+
+5. **Configuración PWA (Crucial):**
+   - Configura el archivo `vite.config.js` y el `manifest.json` correctamente para que la app sea instalable.
+   - Debe tener: `display: "standalone"`, colores de tema definidos y un icono simple (puedes usar un emoji de un faro  o un corazón ❤️ como placeholder).
+
+### PASOS PARA LA IA
+1. Inicializa el proyecto con la configuración de Firebase (dame un archivo firebaseConfig.js con placeholders para que yo ponga mis claves).
+2. Crea el componente de "Login/Emparejamiento".
+3. Crea la vista principal que escucha en tiempo real los cambios en Firebase.
+4. Implementa la lógica del botón "Mantener pulsado".
+5. Asegúrate de que el diseño sea "Mobile First" y se vea perfecto en celular.
+
+Empieza dándome la estructura de archivos y el código del `App.jsx` y `firebase.js`.

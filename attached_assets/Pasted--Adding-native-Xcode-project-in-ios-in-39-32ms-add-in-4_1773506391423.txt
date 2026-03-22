@@ -1,0 +1,54 @@
+✔ Adding native Xcode project in ios in 39.32ms
+✔ add in 40.66ms
+✔ Copying web assets from public to ios/App/App/public in 11.35ms
+✔ Creating capacitor.config.json in ios/App/App in 1.47ms
+✔ copy ios in 103.16ms
+✔ Updating iOS plugins in 17.57ms
+✖ Updating iOS native dependencies with pod install - failed!
+✖ update ios - failed!
+[error] /Library/Ruby/Gems/2.6.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:16:in
+        `<module:LoggerThreadSafeLevel>': uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger
+        (NameError)
+        from /Library/Ruby/Gems/2.6.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:9:in
+        `<module:ActiveSupport>'
+        from /Library/Ruby/Gems/2.6.0/gems/activesupport-6.1.7.10/lib/active_support/logger_thread_safe_level.rb:8:in
+        `<top (required)>'
+        from
+        /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in
+        `require'
+        from
+        /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in
+        `require'
+        from /Library/Ruby/Gems/2.6.0/gems/activesupport-6.1.7.10/lib/active_support/logger_silence.rb:5:in `<top
+        (required)>'
+        from
+        /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in
+        `require'
+        from
+        /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in
+        `require'
+        from /Library/Ruby/Gems/2.6.0/gems/activesupport-6.1.7.10/lib/active_support/logger.rb:3:in `<top (required)>'
+        from
+        /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in
+        `require'
+        from
+        /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in
+        `require'
+        from /Library/Ruby/Gems/2.6.0/gems/activesupport-6.1.7.10/lib/active_support.rb:29:in `<top (required)>'
+        from
+        /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in
+        `require'
+        from
+        /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in
+        `require'
+        from /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.16.2/lib/cocoapods.rb:7:in `<top (required)>'
+        from
+        /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in
+        `require'
+        from
+        /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in
+        `require'
+        from /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.16.2/bin/pod:36:in `<top (required)>'
+        from /usr/local/bin/pod:23:in `load'
+        from /usr/local/bin/pod:23:in `<main>'
+        
